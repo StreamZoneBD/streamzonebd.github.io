@@ -3,51 +3,31 @@
 <head>
   <meta charset="utf-8">
   <title>Live Player</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      overflow: hidden;
+    html,body{
+      margin:0;
+      padding:0;
+      width:100%;
+      height:100%;
+      background:#000;
     }
-
-    .player-wrapper {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* এইটাই black bar remove করে */
-      background: #000;
+    video{
+      width:100%;
+      height:100%;
     }
   </style>
 </head>
 <body>
 
-<div class="player-wrapper">
-  <video id="video" controls autoplay playsinline></video>
-</div>
+<video id="video" controls autoplay playsinline></video>
 
 <script>
 var video = document.getElementById('video');
-
-var videoSrc = "https://plu002.myluck1.top:8088/live/webcricsky/playlist.m3u8?vidictid=204748137159&id=121345&pk=dd1519fa2fc8d94704ce5e65619361b4e9f3f40652023e275f898727f88ac0b45170a61a246db22e9fa8fa90127eb352ba552ccb1053133e95cb7f428da9735a";
+var videoSrc = "https://tgs5.myluck1.top:8088/mobile/stream1_240p/playlist.m3u8?vidictid=204747877172&id=2&pk=060ec159ea1187d544f8699af0a9c2d3157ca74e7cc8145d4b755c7f03cf3f725170a61a246db22e9fa8fa90127eb352ba552ccb1053133e95cb7f428da9735a";
 
 if (Hls.isSupported()) {
-  var hls = new Hls({
-    maxBufferLength: 30,
-    maxMaxBufferLength: 60,
-    lowLatencyMode: true
-  });
+  var hls = new Hls();
   hls.loadSource(videoSrc);
   hls.attachMedia(video);
 } 
